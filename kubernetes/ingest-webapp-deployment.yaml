@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ingestion-webapp-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ingestion-webapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ingestion-webapp
+    spec:
+      containers:
+      - name: ingestion-webapp
+        image: kastellanos/ingestion-webapp
